@@ -267,8 +267,8 @@ export function DailyReview() {
           <>
             <div className="grid gap-3 sm:grid-cols-2">
               {[
-                { k: "大盘宽度", v: sentiment.breadth, hint: "冰点 / 偏弱 / 中性 / 偏强 / 普涨" },
-                { k: "题材投机", v: sentiment.speculation, hint: "冰点 / 普通 / 活跃 / 亢奋" },
+                { k: "Market Breadth", v: sentiment.breadth, hint: "Frozen / Weak / Neutral / Strong / Broad Rally" },
+                { k: "Theme Speculation", v: sentiment.speculation, hint: "Frozen / Normal / Active / Frenzied" },
               ].map((m) => (
                 <div key={m.k} className="rounded-lg bg-muted/25 p-4">
                   <p className="text-xs text-muted-foreground">{m.k}</p>

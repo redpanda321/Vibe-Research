@@ -50,16 +50,16 @@ def _sentiment() -> dict:
     dt, dt_real = _num(d.get("跌停")), _num(d.get("真实跌停"))
     r = up / max(down, 1)
     if up < 600:
-        breadth = "冰点"
+        breadth = "Frozen"
     elif r < 0.7:
-        breadth = "偏弱"
+        breadth = "Weak"
     elif r < 1.2:
-        breadth = "中性"
+        breadth = "Neutral"
     elif r < 2.5:
-        breadth = "偏强"
+        breadth = "Strong"
     else:
-        breadth = "普涨"
-    speculation = "亢奋" if zt_real >= 100 else "活跃" if zt_real >= 60 else "普通" if zt_real >= 30 else "冰点"
+        breadth = "Broad Rally"
+    speculation = "Frenzied" if zt_real >= 100 else "Active" if zt_real >= 60 else "Normal" if zt_real >= 30 else "Frozen"
     return {
         "up": up, "down": down, "flat": flat,
         "zt": zt, "zt_real": zt_real, "dt": dt, "dt_real": dt_real,
